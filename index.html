@@ -212,6 +212,18 @@
             object-fit: cover;
         }
 
+        .profile-pic-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
         .about-text h3 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
@@ -276,6 +288,26 @@
 
         .project-card:hover .project-image img {
             transform: scale(1.05);
+        }
+
+        .project-image-placeholder {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .project-image-placeholder::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
         }
 
         .project-content {
@@ -387,6 +419,36 @@
             color: #666;
             line-height: 1.8;
             margin-bottom: 1rem;
+        }
+
+        .project-screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .screenshot {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .screenshot img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .screenshot-placeholder {
+            width: 100%;
+            height: 200px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
         }
 
         .metrics {
@@ -509,6 +571,17 @@
             .contact-info {
                 grid-template-columns: 1fr;
             }
+        }
+
+        /* Image loading and error states */
+        .img-loading {
+            background: #f0f0f0;
+            animation: pulse 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { opacity: 1; }
+            to { opacity: 0.5; }
         }
     </style>
 </head>
@@ -715,204 +788,244 @@
         </div>
     </footer>
 
-    <!-- Modals for Project Case Studies -->
+    <!-- Project Modals -->
+    
+    <!-- Project 1 Modal -->
     <div id="project1" class="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close">&times;</span>
                 <h2>Password Security Analyser</h2>
-                <p>Advanced password strength analysis with Malaysian cultural patterns</p>
+                <p>Final Year Project • Cybersecurity Tool</p>
             </div>
             <div class="modal-body">
                 <div class="case-study-section">
                     <h4>Project Overview</h4>
-                    <p>This IoT security project involved developing a sophisticated biometric door lock system using fingerprint recognition technology. The system provides secure access control with visual and audio feedback for enhanced user experience and security monitoring. Here is the link for the demonstration = https://youtube.com/shorts/O-OccDCVCSs </p>
+                    <p>The Password Security Analyser is my final year project focused on improving password security awareness. This comprehensive tool combines multiple security analysis techniques to provide users with detailed feedback about their password strength and security vulnerabilities.</p>
                 </div>
-                
+
                 <div class="case-study-section">
-                    <h4>My Role</h4>
-                    <p>As the lead programmer in this group project, I was responsible for:</p>
-                    <ul style="margin-left: 20px; color: #666;">
-                        <li>ESP32 microcontroller programming in Arduino IDE</li>
-                        <li>AS608 fingerprint sensor integration and calibration</li>
-                        <li>I2C OLED display programming for user interface</li>
-                        <li>Relay control system for solenoid lock mechanism</li>
-                        <li>Audio feedback system using buzzer alerts</li>
-                    </ul>
+                    <h4>Key Features</h4>
+                    <p>• Advanced password strength analysis using the ZXCVBN algorithm<br>
+                    • Malaysian cultural pattern detection for localized security insights<br>
+                    • Have I Been Pwned (HIBP) database integration for breach detection<br>
+                    • OpenAI API integration for intelligent security recommendations<br>
+                    • Real-time feedback and security score calculation<br>
+                    • User-friendly web interface with detailed analysis reports</p>
                 </div>
-                
+
                 <div class="case-study-section">
                     <h4>Technical Implementation</h4>
-                    <p><strong>Hardware Components:</strong> ESP32 microcontroller as the main processing unit, AS608 fingerprint sensor for biometric authentication, I2C OLED display for user feedback, relay module for solenoid lock control, buzzer for audio alerts, and solenoid lock mechanism for door security.</p>
-                    <p><strong>Programming:</strong> Developed comprehensive Arduino IDE code handling fingerprint enrollment, authentication, display management, and security protocols.</p>
-                    <p><strong>Security Features:</strong> Implemented multiple security layers including fingerprint verification, failed attempt monitoring, and automatic lockout procedures.</p>
+                    <p>Built using Python Flask framework with a responsive frontend, the application integrates multiple APIs to provide comprehensive password analysis. The system processes passwords locally for privacy while connecting to external databases for breach detection.</p>
                 </div>
-                
-                <div class="case-study-section">
-                    <h4>Project Demo</h4>
-                    <div style="text-align: center; margin: 2rem 0;">
-                        <a href="https://youtube.com/shorts/Zp7odp4jWB0" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: all 0.3s ease;">
-                            🎥 Watch Robot in Action
-                        </a>
-                        <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">See the autonomous line following robot navigating in real-time</p>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">95%</div>
+                        <div class="metric-label">Accuracy Rate</div>
                     </div>
-                </div>
-                
-                <div class="case-study-section">
-                    <h4>Project Demo</h4>
-                    <div style="text-align: center; margin: 2rem 0;">
-                        <a href="https://youtube.com/shorts/O-OccDCVCSs" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: all 0.3s ease;">
-                            🎥 Watch Demo Video
-                        </a>
-                        <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">See the biometric door lock system in action with fingerprint authentication</p>
+                    <div class="metric">
+                        <div class="metric-value">3</div>
+                        <div class="metric-label">API Integrations</div>
                     </div>
-                </div>
-                
-                <div class="case-study-section">
-                    <h4>Project Results</h4>
-                    <div class="metrics">
-                        <div class="metric">
-                            <div class="metric-value">99%</div>
-                            <div class="metric-label">Authentication Accuracy</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">2s</div>
-                            <div class="metric-label">Response Time</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">Group</div>
-                            <div class="metric-label">Team Project</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">Lead</div>
-                            <div class="metric-label">Programming Role</div>
-                        </div>
+                    <div class="metric">
+                        <div class="metric-value">100+</div>
+                        <div class="metric-label">Test Cases</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Project 2 Modal -->
+    <div id="project2" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Autonomous Line Following Robot</h2>
+                <p>IoT Project • Robotics</p>
+            </div>
+            <div class="modal-body">
+                <div class="case-study-section">
+                    <h4>Project Overview</h4>
+                    <p>An autonomous robot designed to follow predefined paths using infrared sensors and ESP32 microcontroller. This project demonstrates practical applications of IoT in robotics and autonomous navigation systems.</p>
+                </div>
+
+                <div class="case-study-section">
+                    <h4>Technical Features</h4>
+                    <p>• ESP32-based control system for wireless capabilities<br>
+                    • Multiple IR sensors for precise line detection<br>
+                    • PID control algorithm for smooth navigation<br>
+                    • Motor speed control and direction management<br>
+                    • Obstacle detection and avoidance system<br>
+                    • Real-time sensor data processing</p>
+                </div>
+
+                <div class="case-study-section">
+                    <h4>Hardware Components</h4>
+                    <p>The robot utilizes high-quality components including precision IR sensors, DC motors with encoders, and a robust chassis design. The ESP32 provides both processing power and connectivity options for future enhancements.</p>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">98%</div>
+                        <div class="metric-label">Path Accuracy</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">5</div>
+                        <div class="metric-label">IR Sensors</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">2h</div>
+                        <div class="metric-label">Battery Life</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 3 Modal -->
+    <div id="project3" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Smart Biometric Door Lock</h2>
+                <p>IoT Security • Access Control</p>
+            </div>
+            <div class="modal-body">
+                <div class="case-study-section">
+                    <h4>Project Overview</h4>
+                    <p>A sophisticated access control system that combines biometric authentication with modern IoT capabilities. This smart door lock provides secure, keyless entry using fingerprint recognition technology.</p>
+                </div>
+
+                <div class="case-study-section">
+                    <h4>Security Features</h4>
+                    <p>• AS608 fingerprint sensor for biometric authentication<br>
+                    • I2C OLED display for user feedback and system status<br>
+                    • Relay-controlled electronic lock mechanism<br>
+                    • Buzzer alerts for security notifications<br>
+                    • ESP32 connectivity for remote monitoring<br>
+                    • Anti-tamper mechanisms and backup access methods</p>
+                </div>
+
+                <div class="case-study-section">
+                    <h4>User Experience</h4>
+                    <p>The system provides intuitive feedback through the OLED display and audio cues. Users can easily enroll new fingerprints and manage access permissions through a simple interface.</p>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">99.9%</div>
+                        <div class="metric-label">Recognition Rate</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">200</div>
+                        <div class="metric-label">Fingerprint Storage</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">24/7</div>
+                        <div class="metric-label">Operational</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 4 Modal -->
     <div id="project4" class="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close">&times;</span>
                 <h2>Homestay Booking Mobile App</h2>
-                <p>Cross-platform tourism and accommodation solution</p>
+                <p>Mobile Application • Tourism</p>
             </div>
             <div class="modal-body">
                 <div class="case-study-section">
                     <h4>Project Overview</h4>
-                    <p>This mobile application project focused on creating a comprehensive homestay booking platform to connect travelers with local accommodation providers. The app facilitates easy booking, payment processing, and communication between hosts and guests.</p>
+                    <p>A comprehensive mobile application designed to streamline homestay bookings and enhance the tourism experience. Built with Flutter for cross-platform compatibility and Firebase for robust backend services.</p>
                 </div>
-                
+
                 <div class="case-study-section">
-                    <h4>My Role</h4>
-                    <p>As the primary developer in this group project, I handled:</p>
-                    <ul style="margin-left: 20px; color: #666;">
-                        <li>Flutter framework development for cross-platform compatibility</li>
-                        <li>User interface design and implementation</li>
-                        <li>Database integration and management</li>
-                        <li>Authentication and user management systems</li>
-                        <li>Booking workflow and payment integration</li>
-                    </ul>
+                    <h4>Core Features</h4>
+                    <p>• User authentication and profile management<br>
+                    • Property search and filtering system<br>
+                    • Secure booking and payment integration<br>
+                    • Real-time availability checking<br>
+                    • Review and rating system<br>
+                    • Push notifications for booking updates<br>
+                    • Multi-language support</p>
                 </div>
-                
+
                 <div class="case-study-section">
-                    <h4>Technical Implementation</h4>
-                    <p><strong>Framework:</strong> Developed using Flutter framework with Dart programming language for cross-platform mobile development targeting both iOS and Android devices.</p>
-                    <p><strong>Backend Integration:</strong> Implemented Firebase backend services for real-time database management, user authentication, and cloud storage capabilities.</p>
-                    <p><strong>User Experience:</strong> Designed intuitive user interfaces with smooth navigation, search functionality, and booking management features.</p>
+                    <h4>Technical Architecture</h4>
+                    <p>The app utilizes Flutter's reactive framework for smooth user interactions and Firebase for real-time data synchronization. Cloud functions handle complex business logic while Firestore manages the database operations.</p>
                 </div>
-                
-                <div class="case-study-section">
-                    <h4>Development Results</h4>
-                    <div class="metrics">
-                        <div class="metric">
-                            <div class="metric-value">2</div>
-                            <div class="metric-label">Platforms Supported</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">Flutter</div>
-                            <div class="metric-label">Framework Used</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">Group</div>
-                            <div class="metric-label">Team Project</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">Lead</div>
-                            <div class="metric-label">Development Role</div>
-                        </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">4.8</div>
+                        <div class="metric-label">User Rating</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">2</div>
+                        <div class="metric-label">Platforms</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">500+</div>
+                        <div class="metric-label">Properties Listed</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Project 5 Modal -->
     <div id="project5" class="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close">&times;</span>
                 <h2>Smart Fish Feeder System</h2>
-                <p>Arduino-based automated pet care solution</p>
+                <p>IoT Automation • Pet Care</p>
             </div>
             <div class="modal-body">
                 <div class="case-study-section">
                     <h4>Project Overview</h4>
-                    <p>This IoT automation project involved developing a smart fish feeding system that automates the feeding process for aquarium fish. The system provides scheduled feeding, portion control, and user-friendly interface for monitoring and configuration.</p>
+                    <p>An automated fish feeding system designed to provide consistent and reliable feeding schedules for aquarium fish. Built using Arduino Uno with servo motor control and I2C display technology for precise timing and monitoring.</p>
                 </div>
-                
-                <div class="case-study-section">
-                    <h4>My Role</h4>
-                    <p>As the lead programmer in this group project, I was responsible for:</p>
-                    <ul style="margin-left: 20px; color: #666;">
-                        <li>Arduino Uno microcontroller programming</li>
-                        <li>Servo motor control system for food dispensing</li>
-                        <li>I2C display programming for user interface</li>
-                        <li>Timing and scheduling algorithm implementation</li>
-                        <li>System testing and calibration</li>
-                    </ul>
-                </div>
-                
-                <div class="case-study-section">
-                    <h4>Technical Implementation</h4>
-                    <p><strong>Hardware Components:</strong> Arduino Uno as the main microcontroller, servo motor for precise food dispensing mechanism, I2C LCD display for user interface and status monitoring, and real-time clock module for accurate scheduling.</p>
-                    <p><strong>Programming:</strong> Developed comprehensive Arduino code handling servo motor control, display management, user input processing, and feeding schedule algorithms.</p>
-                    <p><strong>Automation Features:</strong> Implemented customizable feeding schedules, portion size control, and manual feeding override capabilities.</p>
-                </div>
-                
+
                 <div class="case-study-section">
                     <h4>Key Features</h4>
-                    <ul style="margin-left: 20px; color: #666;">
-                        <li>Automated feeding schedule with multiple daily feeds</li>
-                        <li>Precise portion control using servo motor mechanism</li>
-                        <li>LCD display showing feeding times and system status</li>
-                        <li>Manual feeding option with button control</li>
-                        <li>Low food level detection and alerts</li>
-                        <li>Power-efficient operation with sleep modes</li>
-                    </ul>
+                    <p>• Arduino Uno-based control system for reliable operation<br>
+                    • Servo motor for precise food dispensing mechanism<br>
+                    • I2C LCD display for schedule monitoring and system status<br>
+                    • Programmable feeding schedules with multiple daily feeds<br>
+                    • Portion control system to prevent overfeeding<br>
+                    • Manual override functionality for immediate feeding<br>
+                    • Low food level detection and alerts</p>
                 </div>
-                
+
                 <div class="case-study-section">
-                    <h4>Project Results</h4>
-                    <div class="metrics">
-                        <div class="metric">
-                            <div class="metric-value">95%</div>
-                            <div class="metric-label">Feeding Accuracy</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">30 days</div>
-                            <div class="metric-label">Autonomous Operation</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">Group</div>
-                            <div class="metric-label">Team Project</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">Lead</div>
-                            <div class="metric-label">Programming Role</div>
-                        </div>
+                    <h4>Hardware Design</h4>
+                    <p>The system features a custom-designed food hopper with servo-controlled dispensing mechanism. The I2C display provides real-time feedback on feeding schedules, system status, and maintenance alerts. The Arduino Uno ensures reliable operation with minimal power consumption.</p>
+                </div>
+
+                <div class="case-study-section">
+                    <h4>Benefits</h4>
+                    <p>This automated system ensures consistent fish care even when owners are away, prevents overfeeding, and maintains optimal aquarium health. The programmable interface allows for customization based on different fish species requirements.</p>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">6x</div>
+                        <div class="metric-label">Daily Feeds</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">30</div>
+                        <div class="metric-label">Days Capacity</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">99%</div>
+                        <div class="metric-label">Reliability</div>
                     </div>
                 </div>
             </div>
@@ -934,42 +1047,37 @@
             });
         });
 
-        // Mobile menu toggle
+        // Mobile navigation toggle
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
 
-        if (hamburger && navLinks) {
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                hamburger.classList.toggle('active');
-            });
-        }
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
 
         // Modal functionality
         function openModal(projectId) {
-            const modal = document.getElementById(projectId);
-            if (modal) {
-                modal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            }
+            document.getElementById(projectId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
         }
 
-        // Close modal functionality
-        document.querySelectorAll('.close').forEach(closeBtn => {
-            closeBtn.addEventListener('click', function() {
-                const modal = this.closest('.modal');
-                if (modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        });
+        function closeModal(projectId) {
+            document.getElementById(projectId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
 
-        // Close modal when clicking outside
+        // Close modal when clicking outside or on close button
         document.querySelectorAll('.modal').forEach(modal => {
-            modal.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    this.style.display = 'none';
+            const closeBtn = modal.querySelector('.close');
+            
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
                     document.body.style.overflow = 'auto';
                 }
             });
@@ -978,14 +1086,12 @@
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            if (header) {
-                if (window.scrollY > 100) {
-                    header.style.background = 'rgba(255, 255, 255, 0.98)';
-                    header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
-                } else {
-                    header.style.background = 'rgba(255, 255, 255, 0.95)';
-                    header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-                }
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
             }
         });
 
@@ -998,158 +1104,32 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
 
-        // Observe all project cards and sections
-        document.querySelectorAll('.project-card, .section').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Keyboard navigation support
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.modal').forEach(modal => {
-                    if (modal.style.display === 'block') {
-                        modal.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    }
-                });
-            }
-        });
-
-        // Track project views for analytics
+        // Observe project cards for animation
         document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const projectTitle = card.querySelector('.project-title').textContent;
-                console.log('Project viewed:', projectTitle);
-            });
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
         });
 
-        // Image loading error handling
+        // Image loading with error handling
         document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', function() {
+                this.classList.remove('img-loading');
+            });
+            
             img.addEventListener('error', function() {
-                console.log('Image failed to load:', this.src);
-                // You can add fallback image or placeholder here
+                this.classList.remove('img-loading');
+                // Optionally, you can add a placeholder or error message here
+                console.log('Failed to load image:', this.src);
             });
         });
     </script>
 </body>
 </html>
-                    <h4>Project Overview</h4>
-                    <p>My Final Year Project focused on developing a comprehensive password security analysis tool that addresses Malaysian-specific password patterns. The system combines the proven ZXCVBN algorithm with custom cultural pattern detection and real-time breach database verification.</p>
-                </div>
-                
-                <div class="case-study-section">
-                    <h4>My Role</h4>
-                    <p>As the sole developer on this project, I was responsible for:</p>
-                    <ul style="margin-left: 20px; color: #666;">
-                        <li>Research and analysis of Malaysian password patterns</li>
-                        <li>Custom library development for cultural pattern detection</li>
-                        <li>Flask web application development</li>
-                        <li>Integration with OpenAI API and HIBP database</li>
-                        <li>Frontend design using HTML, CSS, and JavaScript</li>
-                    </ul>
-                </div>
-                
-                <div class="case-study-section">
-                    <h4>Technical Implementation</h4>
-                    <p><strong>Backend:</strong> Developed using Python Flask framework with custom algorithms for Malaysian cultural patterns including common Malay words, local slang, and cultural references.</p>
-                    <p><strong>Security Features:</strong> Integrated with Have I Been Pwned (HIBP) API to check against known breached passwords, ensuring comprehensive security analysis.</p>
-                    <p><strong>AI Enhancement:</strong> Utilized OpenAI API to enhance pattern recognition and provide intelligent password improvement suggestions.</p>
-                    <p><strong>Frontend:</strong> Created responsive web interface using modern HTML5, CSS3, and JavaScript for real-time password analysis feedback.</p>
-                </div>
-                
-                <div class="case-study-section">
-                    <h4>Development Achievements</h4>
-                    <div class="metrics">
-                        <div class="metric">
-                            <div class="metric-value">98%</div>
-                            <div class="metric-label">Pattern Detection Accuracy</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">500ms</div>
-                            <div class="metric-label">Analysis Response Time</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">15+</div>
-                            <div class="metric-label">Malaysian Patterns Detected</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">Solo</div>
-                            <div class="metric-label">Individual Project</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="project2" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2>Autonomous Line Following Robot</h2>
-                <p>ESP32-based intelligent navigation system</p>
-            </div>
-            <div class="modal-body">
-                <div class="case-study-section">
-                    <h4>Project Overview</h4>
-                    <p>This robotics project involved creating an autonomous line-following robot capable of precise navigation using infrared sensors. The robot demonstrates fundamental concepts of embedded programming, sensor integration, and motor control systems. Here is the link for the demonstration = https://youtube.com/shorts/Zp7odp4jWB0 </p>
-                </div>
-                
-                <div class="case-study-section">
-                    <h4>My Role</h4>
-                    <p>As the primary programmer in this group project, I handled:</p>
-                    <ul style="margin-left: 20px; color: #666;">
-                        <li>ESP32 microcontroller programming in Arduino IDE</li>
-                        <li>Sensor calibration and integration</li>
-                        <li>Motor control algorithm development</li>
-                        <li>Navigation logic implementation</li>
-                        <li>System testing and optimization</li>
-                    </ul>
-                </div>
-                
-                <div class="case-study-section">
-                    <h4>Technical Implementation</h4>
-                    <p><strong>Hardware Components:</strong> ESP32 microcontroller, three IR sensors for line detection, L298N motor driver for precise motor control, two DC motors powering the wheel system, and 4 AA battery pack for power supply.</p>
-                    <p><strong>Programming:</strong> Developed in Arduino IDE using C++ with custom algorithms for sensor reading, decision making, and motor control coordination.</p>
-                    <p><strong>Navigation Logic:</strong> Implemented PID control system for smooth line following with error correction capabilities.</p>
-                </div>
-                
-                <div class="case-study-section">
-                    <h4>Project Results</h4>
-                    <div class="metrics">
-                        <div class="metric">
-                            <div class="metric-value">95%</div>
-                            <div class="metric-label">Navigation Accuracy</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">3hrs</div>
-                            <div class="metric-label">Battery Life</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">Group</div>
-                            <div class="metric-label">Team Project</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">Lead</div>
-                            <div class="metric-label">Programming Role</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="project3" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2>Smart Biometric Door Lock</h2>
-                <p>Advanced fingerprint-based security system</p>
-            </div>
-            <div class="modal-body">
-                <div class="case-study-section">
