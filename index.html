@@ -673,12 +673,14 @@
                         </div>
 
                         <div class="skills" style="margin-top: 2rem;">
-                            <span class="skill-tag">Ubuntu Server /span>
-                            <span class="skill-tag">Docker </span>
-                            <span class="skill-tag">Tailscale VPN </span>
-                            <span class="skill-tag">Python (Flask) /span>
-                            <span class="skill-tag">System Hardening </span>
-                            <span class="skill-tag">Penetration Testing </span>
+                            <span class="skill-tag" style="background: #e35716;">Ubuntu Server</span>
+                            <span class="skill-tag" style="background: #e67e22;">Wazuh SIEM</span>
+                            <span class="skill-tag" style="background: #27ae60;">Uptime Kuma</span>   
+                            <span class="skill-tag" style="background: #27aeae;">Docker</span>
+                            <span class="skill-tag" style="background: #36130967;">Tailscale VPN</span>
+                            <span class="skill-tag" style="background: #7a5f14;">Python</span>
+                            <span class="skill-tag" style="background: #084712;">System Hardening</span>
+                            <span class="skill-tag" style="background: #471d09;">Penetration Testing</span>
                         </div>
                     </div>
                 </div>
@@ -714,17 +716,17 @@
                 <div class="projects-grid">
                     <div class="project-card" onclick="openModal('project_server')">
                         <div class="project-image">
-                            <img src="images/homelab2.png" alt="Self-Hosted Infrastructure Dashboard">
+                            <img src="images/wazuh_dashboard.png" alt="Wazuh SIEM Dashboard">
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Self-Hosted Security Infrastructure</h3>
-                            <p class="project-category">Homelab & Infrastructure Management</p>
-                            <p class="project-description">Architected a secure Ubuntu Server environment hosting 6 Dockerized services including Vaultwarden and Nextcloud, secured behind a Tailscale mesh VPN.</p>
+                            <h3 class="project-title">Distributed SIEM & Security Infrastructure</h3>
+                            <p class="project-category">Security Operations & Infrastructure</p>
+                            <p class="project-description">Engineered a distributed Wazuh SIEM environment to monitor cross-platform endpoints for threats, vulnerabilities, and unauthorized configuration changes.</p>
                             <div class="project-tags">
-                                <span class="project-tag">Ubuntu Server</span>
+                                <span class="project-tag">Wazuh SIEM/EDR</span>
                                 <span class="project-tag">Docker</span>
+                                <span class="project-tag">Ubuntu Server</span>
                                 <span class="project-tag">Tailscale</span>
-                                <span class="project-tag">UFW</span>
                             </div>
                         </div>
                     </div>
@@ -1129,47 +1131,35 @@
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close" onclick="closeModal('project_server')">&times;</span>
-                <h2>Self-Hosted IT Infrastructure</h2>
-                <p>Personal Homelab <div id="project_server" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" onclick="closeModal('project_server')">&times;</span>
-                <h2>Self-Hosted IT Infrastructure</h2>
-                <p>Personal Homelab </p>
+                <h2>Distributed SIEM & Security Infrastructure</h2>
+                <p>Enterprise-Grade Threat Detection & Monitoring</p>
             </div>
             <div class="modal-body">
                 <div class="case-study-section">
                     <h4>Project Overview</h4>
-                    <p>Architected and maintaining a custom Ubuntu Server environment hosting 6 Dockerized services with 15+ days of continuous uptime under load. This project serves as a live environment for testing zero-trust networking and security policies.</p>
+                    <p>Designed and deployed a distributed SIEM (Security Information and Event Management) architecture using Wazuh. This system provides centralized visibility into my home lab, monitoring both my Linux workstation (EndeavourOS) and production server (Ubuntu) for real-time security events.</p>
                 </div>
 
                 <div class="case-study-section">
-                    <h4>Hardware Specifications</h4>
-                    <p>• <strong>CPU:</strong> Intel Pentium Dual-Core E5200 @ 2.50GHz <br>
-                    • <strong>Memory:</strong> 4GB RAM <br>
-                    • <strong>Storage:</strong> 1.6TB Hybrid Storage (SSD + HDD) </p>
-                </div>
-
-                <div class="case-study-section">
-                    <h4>Security Implementation</h4>
-                    <p>• <strong>Zero-Trust Access:</strong> Secured via Tailscale Mesh VPN, eliminating all public port exposure.<br>
-                    • <strong>Perimeter Defense:</strong> Configured UFW firewall rules and network segmentation via a managed switch.<br>
-                    • <strong>Credential Management:</strong> Self-hosted Vaultwarden for encrypted password storage<br>
-                    • <strong>Health Monitoring:</strong> Real-time status tracking via Uptime Kuma dashboard.</p>
+                    <h4>Key Security Features</h4>
+                    <p>• <strong>Threat Intelligence:</strong> Real-time log analysis and intrusion detection (IDS/IPS).<br>
+                    • <strong>Vulnerability Management:</strong> Automated scans against global CVE databases to identify outdated server packages.<br>
+                    • <strong>File Integrity Monitoring (FIM):</strong> Immediate alerting on unauthorized changes to critical system or Docker config files.<br>
+                    • <strong>Compliance Auditing:</strong> Automated Security Configuration Assessment (SCA) mapped to CIS Ubuntu Benchmarks.</p>
                 </div>
 
                 <div class="metrics">
                     <div class="metric">
-                        <div class="metric-value">6</div>
-                        <div class="metric-label">Docker Services </div>
+                        <div class="metric-value">51%</div>
+                        <div class="metric-label">Initial SCA Score</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">Real-Time</div>
+                        <div class="metric-label">Threat Alerts</div>
                     </div>
                     <div class="metric">
                         <div class="metric-value">0</div>
-                        <div class="metric-label">Public Ports </div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">22%</div>
-                        <div class="metric-label">Avg. RAM Usage </div>
+                        <div class="metric-label">Public Port Exposure</div>
                     </div>
                 </div>
             </div>
